@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This is responsible for making the HTTP requests to the Server
 class QueryService {
     typealias JSONDictionary = [String: Any]
     typealias QueryResult = ([FeedItem]?, String) -> ()
@@ -17,6 +18,7 @@ class QueryService {
     var feeds: [FeedItem] = []
     var errorMessage = ""
     
+    // GET /feed
     func getFeed(completion: @escaping QueryResult) {
         dataTask?.cancel()
         if var urlComponents = URLComponents(string: "http://udagram-restapi-prod.us-east-2.elasticbeanstalk.com/api/v0/feed") {
@@ -38,6 +40,7 @@ class QueryService {
         }
     }
     
+    // Parse the JSON data and put it in a swift data structure
     fileprivate func updateFeed(_ data: Data) {
         var response: JSONDictionary?
         feeds.removeAll()
