@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g7x-Ei-XAy">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed Items-->
+        <scene sceneID="AJg-cs-wXe">
+            <objects>
+                <tableViewController id="g7x-Ei-XAy" customClass="FeedItems" customModule="Udagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wgn-uJ-eEo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedItemCell" rowHeight="245" id="7HD-bh-Q9Q" customClass="FeedItemCell" customModule="Udagram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7HD-bh-Q9Q" id="wkW-s7-mUt">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="244.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o0B-fP-nW0">
+                                            <rect key="frame" x="0.0" y="11" width="414" height="186"/>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comment" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Osz-eA-Vtp">
+                                            <rect key="frame" x="40" y="194" width="334" height="50"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="eAa-3n-lCS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="o0B-fP-nW0" firstAttribute="leading" secondItem="wkW-s7-mUt" secondAttribute="leadingMargin" constant="-20" id="2WV-0x-Ish"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="o0B-fP-nW0" secondAttribute="bottom" constant="37" id="5Ct-9U-Uxf"/>
+                                        <constraint firstItem="o0B-fP-nW0" firstAttribute="top" secondItem="wkW-s7-mUt" secondAttribute="topMargin" id="8Zz-Fk-fUP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Osz-eA-Vtp" secondAttribute="bottom" constant="-10" id="TAH-hF-uwM"/>
+                                        <constraint firstItem="o0B-fP-nW0" firstAttribute="centerX" secondItem="wkW-s7-mUt" secondAttribute="centerX" id="WEn-Qw-4eH"/>
+                                        <constraint firstItem="o0B-fP-nW0" firstAttribute="trailing" secondItem="Osz-eA-Vtp" secondAttribute="trailing" constant="40" id="lZN-zR-Qto"/>
+                                        <constraint firstItem="o0B-fP-nW0" firstAttribute="leading" secondItem="Osz-eA-Vtp" secondAttribute="leading" constant="-40" id="xYZ-hG-52Y"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="feedCaption" destination="Osz-eA-Vtp" id="kYo-Ae-5gf"/>
+                                    <outlet property="feedImage" destination="o0B-fP-nW0" id="WkQ-El-dIW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g7x-Ei-XAy" id="nLS-EY-7eh"/>
+                            <outlet property="delegate" destination="g7x-Ei-XAy" id="acG-uP-omG"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="feedItemTableView" destination="Wgn-uJ-eEo" id="uTG-sL-D5w"/>
+                        <outlet property="tableView" destination="Wgn-uJ-eEo" id="by4-hE-S2Y"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYZ-Se-tDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573.91304347826087" y="170.75892857142856"/>
+        </scene>
+    </scenes>
+</document>
